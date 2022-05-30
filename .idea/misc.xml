@@ -8,6 +8,7 @@
         <entry key="../../../Library/Android/sdk/platforms/android-30/data/res/layout/auto_complete_list.xml" value="0.1828125" />
         <entry key="app/src/main/res/drawable/ic_sleep_active.xml" value="0.19" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/fragment_sleep_detail.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/layout/fragment_sleep_quality.xml" value="0.1828125" />
         <entry key="app/src/main/res/layout/fragment_sleep_tracker.xml" value="0.1828125" />
         <entry key="app/src/main/res/layout/list_item_sleep_night.xml" value="0.5" />
