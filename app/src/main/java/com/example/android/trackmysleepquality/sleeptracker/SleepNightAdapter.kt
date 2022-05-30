@@ -4,7 +4,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.ListAdapter
 import com.example.android.trackmysleepquality.R
 import com.example.android.trackmysleepquality.convertDurationToFormatted
 import com.example.android.trackmysleepquality.convertNumericQualityToString
@@ -12,16 +14,15 @@ import com.example.android.trackmysleepquality.database.SleepNight
 
 
 
-class SleepNightAdapter: RecyclerView.Adapter<ViewHolder>() {
-
-    var data = listOf<SleepNight>()
-    set(value) {
-        field = value
-        notifyDataSetChanged()
-    }
-    override fun getItemCount() = data.size
+class SleepNightAdapter: ListAdapter<SleepNight, ViewHolder>(ViewHolder.SleepNightDiffCallback()){
+ //   var data = listOf<SleepNight>()
+//    set(value) {
+//        field = value
+//        notifyDataSetChanged()
+//    }
+  //  override fun getItemCount() = data.size
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = data[position]
+    val item = getItem(position)
          holder.bind(item)
     }
 
@@ -60,7 +61,19 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
             return ViewHolder(view)
         }
     }
+   class SleepNightDiffCallback: DiffUtil.ItemCallback<SleepNight>(){
 
+       //  this test to help discover if an item was added, removed, or moved.
+       override fun areItemsTheSame(oldItem: SleepNight, newItem: SleepNight): Boolean {
+           return oldItem.nightID == newItem.nightID
+       }
+
+        //  this code tells DiffUtil that the item has been updated.
+       override fun areContentsTheSame(oldItem: SleepNight, newItem: SleepNight): Boolean {
+           return oldItem == newItem
+       }
+
+   }
 
 
 }
