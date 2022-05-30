@@ -10,7 +10,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/layout/fragment_sleep_quality.xml" value="0.1828125" />
         <entry key="app/src/main/res/layout/fragment_sleep_tracker.xml" value="0.1828125" />
-        <entry key="app/src/main/res/layout/list_item_sleep_night.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/layout/list_item_sleep_night.xml" value="0.5" />
         <entry key="app/src/main/res/layout/text_item_view.xml" value="0.23177083333333334" />
       </map>
     </option>
